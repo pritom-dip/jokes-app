@@ -1,0 +1,78 @@
+@import "../../../styles//mixins";
+@import "../../../styles//variables";
+
+.categoryWrapper {
+  @include flex;
+  .category {
+    width: 20%;
+    padding: 10px;
+    .item {
+      background-color: $lightBlack;
+      color: $white;
+      padding: 20px;
+      color: $white;
+      font-size: $mediumFontSize;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 600;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      text-align: center;
+      &.category0 {
+        @include category-color($mediumBlack, $white);
+      }
+      &.category1 {
+        @include category-color($pastelOrange, $white);
+      }
+      &.category2 {
+        @include category-color($lightRed, $white);
+      }
+      &.category3 {
+        @include category-color($weirdGreen, $white);
+      }
+      &.category4 {
+        @include category-color($paste, $white);
+      }
+      &.category5 {
+        @include category-color(tomato, $white);
+      }
+      &.category6 {
+        @include category-color(goldenrod, $white);
+      }
+      &.category7 {
+        @include category-color($mediumBlack, $white);
+      }
+      &.category8 {
+        @include category-color(magenta, $white);
+      }
+      &.category9 {
+        @include category-color(gold, black);
+      }
+      &.category10 {
+        @include category-color(purple, black);
+      }
+      &.category11 {
+        @include category-color($lightRed, $white);
+      }
+      &.category12 {
+        @include category-color($paste, $white);
+      }
+      &.category13 {
+        @include category-color(purple, black);
+      }
+      &.category14 {
+        @include category-color(goldenrod, $white);
+      }
+      &.category15 {
+        @include category-color($mediumBlack, $white);
+      }
+      &.loadMore {
+        @include category-color($white, $lightGrey);
+        border: 1px solid $lightGrey;
+        img {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}

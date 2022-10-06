@@ -1,5 +1,6 @@
 @mixin containerWidth {
   width: 1140px;
+  margin: auto;
 }
 
 // Flex Properties
@@ -32,4 +33,14 @@
   &.directionColumn {
     flex-direction: column;
   }
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
+
+// Category Mixin
+
+@mixin category-color($bgColor, $color) {
+  background-color: $bgColor;
+  color: $color;
 }
