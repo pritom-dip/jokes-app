@@ -12,7 +12,9 @@
       }
     }
     .item {
-      padding: 20px 50px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
       font-size: $headerFontSize;
       cursor: pointer;
       font-weight: 600;
@@ -25,9 +27,17 @@
           display: block;
         }
       }
-
       &:last-child {
         margin-right: 0px;
+      }
+      .heading {
+        @include flex;
+        .iconRight {
+          margin-left: 20px;
+        }
+        .iconLeft {
+          margin-right: 20px;
+        }
       }
       .submenu {
         position: absolute;
@@ -48,6 +58,8 @@
           color: $lightBlack;
           font-size: $mediumFontSize;
           transition: all 0.3s;
+          text-align: left;
+          padding-left: 30px;
           &:hover {
             color: $lightGrey;
           }
