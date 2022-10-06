@@ -1,0 +1,24 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.wrapper {
+  margin-top: $sectionGap;
+  .headerWrapper {
+    border-top: 1px solid $borderColor;
+    .headerContent {
+      @include flex;
+      span {
+        background-color: $weirdGreen;
+        color: $white;
+        padding: 5px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+      }
+    }
+  }
+  .cardWrapper {
+    @include flex;
+    margin-top: $sectionGap;
+    margin-bottom: $sectionGap;
+  }
+}

@@ -1,0 +1,52 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.card {
+  width: 33%;
+  &:nth-child(3n + 1) {
+    .cardContent {
+      margin-left: 0px;
+    }
+  }
+  &:nth-child(3n) {
+    .cardContent {
+      margin-right: 0px;
+    }
+  }
+  &:nth-child(3n + 2) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .cardContent {
+    margin: 10px;
+    border: 1px solid $borderColor;
+    padding: 16px;
+    border-radius: 5px;
+    background-color: $white;
+    .headerWrapper {
+      @include flex;
+    }
+    .header {
+      font-size: $cardTitle;
+      font-weight: 600;
+      color: $mediumBlack;
+      text-transform: capitalize;
+    }
+    .content {
+      font-size: $cardContent;
+      color: $mediumBlack;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    .statWrapper {
+      @include flex;
+      text-decoration: none;
+      color: $lightGrey;
+      text-transform: uppercase;
+      font-weight: bold;
+      .stat {
+        margin-right: 10px;
+      }
+    }
+  }
+}

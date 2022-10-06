@@ -1,11 +1,19 @@
 @import "../../../styles//mixins";
-@import "../../../styles//variables";
+@import "../../../styles/variables";
 
 .categoryWrapper {
   @include flex;
   .category {
     width: 20%;
     padding: 10px;
+    &:first-child,
+    &:nth-child(6) {
+      padding-left: 0px;
+    }
+    &:last-child,
+    &:nth-child(5n) {
+      padding-right: 0px;
+    }
     .item {
       background-color: $lightBlack;
       color: $white;

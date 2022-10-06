@@ -1,7 +1,10 @@
 @import "../../../styles/mixins";
 @import "../../../styles/variables";
 
-.wrapper {
-  @include containerWidth;
-  margin-top: $sectionGap;
+.mainSection {
+  background-color: $lightWhite;
+  padding-top: $sectionGap;
+  .wrapper {
+    @include containerWidth;
+  }
 }
