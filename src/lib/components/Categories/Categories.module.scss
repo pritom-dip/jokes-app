@@ -6,6 +6,15 @@
   .category {
     width: 20%;
     padding: 10px;
+    @media only screen and (max-width: 767px) {
+      width: 50%;
+    }
+    @media only screen and (max-width: 992px) {
+      width: 50%;
+    }
+    @media only screen and (max-width: 576px) {
+      width: 100%;
+    }
     &:first-child,
     &:nth-child(6) {
       padding-left: 0px;
