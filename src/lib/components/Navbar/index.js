@@ -6,17 +6,17 @@ const menus = [
   {
     name: "Menu 1",
     link: "#",
-    subment: [],
+    submenu: [],
   },
   {
     name: "Menu 2",
     link: "#",
-    subment: [],
+    submenu: [],
   },
   {
     name: "Menu 3",
     link: "#",
-    subment: [
+    submenu: [
       {
         name: "Submenu 1",
         link: "#",
@@ -38,7 +38,18 @@ const Navbar = () => {
         <ul className={classNames(styles.flex)}>
           {menus?.map((menu) => (
             <Link key={menu.name} to={menu.link}>
-              <li className={classNames(styles.item)}>{menu?.name}</li>
+              <li className={classNames(styles.item)}>
+                <div>{menu?.name}</div>
+                {menu.submenu.length > 0 && (
+                  <ul className={classNames(styles.submenu)}>
+                    {menu.submenu.map((sub) => (
+                      <Link key={sub.name} to={sub.link}>
+                        <li className={styles.submenuItem}>{sub.name}</li>
+                      </Link>
+                    ))}
+                  </ul>
+                )}
+              </li>
             </Link>
           ))}
         </ul>

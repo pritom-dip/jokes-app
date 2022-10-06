@@ -18,12 +18,40 @@
       font-weight: 600;
       transition: all 0.3s;
       color: $white;
+      position: relative;
       &:hover {
         background-color: $lightGrey;
+        .submenu {
+          display: block;
+        }
       }
 
       &:last-child {
         margin-right: 0px;
+      }
+      .submenu {
+        position: absolute;
+        bottom: -76px;
+        right: 0px;
+        color: $lightBlack;
+        background-color: $white;
+        z-index: 1000;
+        width: 100%;
+        display: none;
+        font-weight: 400;
+        a {
+          text-decoration: none;
+        }
+        .submenuItem {
+          border-bottom: 1px solid $borderColor;
+          padding: 10px;
+          color: $lightBlack;
+          font-size: $mediumFontSize;
+          transition: all 0.3s;
+          &:hover {
+            color: $lightGrey;
+          }
+        }
       }
     }
   }

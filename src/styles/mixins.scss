@@ -29,4 +29,7 @@
   &.alignCenter {
     align-items: center;
   }
+  &.directionColumn {
+    flex-direction: column;
+  }
 }

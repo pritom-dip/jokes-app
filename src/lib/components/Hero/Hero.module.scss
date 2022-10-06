@@ -8,6 +8,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   @include flex;
+  .mainContent {
+    @include flex;
+    gap: 10px;
+  }
   .headerName {
     font-size: $heroTitle;
     color: $lightGrey;
