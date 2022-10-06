@@ -1,0 +1,32 @@
+@mixin containerWidth {
+  width: 1140px;
+}
+
+// Flex Properties
+@mixin flex {
+  display: flex;
+  &.flexBetween {
+    justify-content: space-between;
+  }
+  &.flexEnd {
+    justify-content: flex-end;
+  }
+  &.flexStart {
+    justify-content: flex-start;
+  }
+  &.flexCenter {
+    justify-content: center;
+  }
+  &.alignBetween {
+    align-items: space-between;
+  }
+  &.alignEnd {
+    align-items: flex-end;
+  }
+  &.alignStart {
+    align-items: flex-start;
+  }
+  &.alignCenter {
+    align-items: center;
+  }
+}

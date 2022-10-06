@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins";
+
+.wrapper {
+  background-color: $mediumBlack;
+  .container {
+    margin: auto;
+    @include containerWidth;
+    ul {
+      a {
+        text-decoration: none;
+      }
+    }
+    .item {
+      padding: 20px 50px;
+      font-size: $headerFontSize;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      color: $white;
+      &:hover {
+        background-color: $lightGrey;
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+  .flex {
+    @include flex;
+  }
+}

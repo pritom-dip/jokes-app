@@ -1,0 +1,21 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins";
+
+.wrapper {
+  background: url("../../assets/images/hero.png");
+  height: 400px;
+  color: $white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include flex;
+  .headerName {
+    font-size: $heroTitle;
+    color: $lightGrey;
+    font-weight: 400;
+    line-height: 72px;
+  }
+  .content {
+    color: $white;
+    font-size: $heroContent;
+  }
+}

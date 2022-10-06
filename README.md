@@ -14,6 +14,8 @@ yarn
 yarn start
 ```
 
+# `Visit http://localhost:8080/` to view the app
+
 ## To build
 
 ```
