@@ -1,0 +1,30 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.wrapper {
+  @include flex;
+  background: url("../../assets/images/smile.png");
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .container {
+    @include containerWidth;
+    .header {
+      text-transform: uppercase;
+      font-size: $cardTitle;
+      font-weight: 600;
+      color: $white;
+    }
+    .statWrapper {
+      @include flex;
+      margin-top: 20px;
+      text-decoration: none;
+      color: $lightGrey;
+      text-transform: uppercase;
+      font-weight: bold;
+      .stat {
+        margin-right: 10px;
+      }
+    }
+  }
+}

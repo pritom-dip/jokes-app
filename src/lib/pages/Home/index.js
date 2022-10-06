@@ -3,6 +3,7 @@ import classNames from "classnames";
 import styles from "./Home.module.scss";
 import Categories from "../../components/Categories";
 import Cards from "../../components/Cards";
+import Submit from "../../components/Submit";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <Categories />
         <Cards />
       </div>
+      <Submit />
     </div>
   );
 };
