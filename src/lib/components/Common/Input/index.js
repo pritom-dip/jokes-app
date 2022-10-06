@@ -1,11 +1,28 @@
 import styles from "./Input.module.scss";
-import { AiOutlineSearch } from "react-icons/ai";
 
-const Input = () => {
+const Input = ({
+  name,
+  value,
+  handleChange,
+  icon,
+  type = "text",
+  placeholder = "Text",
+}) => {
+  const onChange = (e) => {
+    handleChange(e.target.value);
+  };
+
   return (
     <div className={styles.wrapper}>
-      <input className={styles.input} type="text" placeholder="Text" />
-      <AiOutlineSearch className={styles.icon} size="30px" />
+      <input
+        className={styles.input}
+        name={name}
+        value={value}
+        type={type}
+        onChange={onChange}
+        placeholder={placeholder}
+      />
+      {icon && <img src={icon} className={styles.icon} />}
     </div>
   );
 };
