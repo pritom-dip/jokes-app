@@ -2,28 +2,13 @@ import classNames from "classnames";
 import { useEffect, useMemo, useState } from "react";
 import styles from "./Categories.module.scss";
 import DownArrowIcon from "../../assets/images/downArrow.png";
+import { useDispatch } from "react-redux";
+import { filterByCategory } from "../../features/jokes/jokesSlice";
 
-const defaultCat = [
-  "animal",
-  "career",
-  "celebrity",
-  "dev",
-  "explicit",
-  "fashion",
-  "food",
-  "history",
-  "money",
-  "movie",
-  "music",
-  "political",
-  "religion",
-  "science",
-  "sport",
-  "travel",
-];
-
-const Categories = ({ categories = defaultCat }) => {
+const Categories = ({ categories }) => {
   const [filterCategory, setFilterCategory] = useState([]);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (categories && categories.length > 7) {
@@ -37,16 +22,12 @@ const Categories = ({ categories = defaultCat }) => {
   }, [categories]);
 
   const handleClick = (category) => {
-    console.log(category);
+    dispatch(filterByCategory(category));
   };
 
   if (!categories || categories.length === 0) {
     return <div>No Categories</div>;
   }
-
-  const catLength = useMemo(() => {
-    return categories.reduce((total, item) => total + 1, 0);
-  }, [categories]);
 
   const handleLoadMore = () => {
     setFilterCategory(categories);

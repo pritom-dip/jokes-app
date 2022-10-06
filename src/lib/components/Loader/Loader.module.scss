@@ -1,0 +1,21 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.wrapper {
+  min-height: 400px;
+  @include flex;
+
+  .loading {
+    padding: 15px;
+    border: 6px solid $borderColor;
+    border-right-color: $lightBlack;
+    border-radius: 22px;
+    -webkit-animation: rotate 1s infinite linear;
+  }
+
+  @-webkit-keyframes rotate {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+}
