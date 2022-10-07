@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Loader from "../Loader";
 import { useDispatch } from "react-redux";
 import { fetchMoreData } from "../../features/jokes/jokesSlice";
+import Badge from "../Badge";
 
 const Cards = ({ results, total, fetchedCount }) => {
   const [hasMore, setHasMore] = useState(true);
@@ -31,11 +32,7 @@ const Cards = ({ results, total, fetchedCount }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.headerWrapper}>
-        <p className={styles.headerContent}>
-          <span>Social Jokes</span>
-        </p>
-      </div>
+      <Badge name="Social Jokes" />
       <InfiniteScroll
         dataLength={results.length} //This is important field to render the next data
         next={fetchData}

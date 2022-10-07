@@ -3,28 +3,6 @@
 
 .wrapper {
   margin-top: $sectionGap;
-  .headerWrapper {
-    border-top: 1px solid $borderColor;
-    @media only screen and (max-width: 767px) {
-      margin-left: 10px;
-    }
-    @media only screen and (max-width: 992px) {
-      margin-left: 10px;
-    }
-    @media only screen and (max-width: 576px) {
-      margin-left: 10px;
-    }
-    .headerContent {
-      @include flex;
-      span {
-        background-color: $weirdGreen;
-        color: $white;
-        padding: 5px 20px;
-        border-radius: 50px;
-        font-weight: 600;
-      }
-    }
-  }
   .cardWrapper {
     @include flex;
     margin-top: $sectionGap;

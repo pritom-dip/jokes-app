@@ -14,6 +14,7 @@ const initialState = {
   fetchedCount: 0,
   total: 0,
   searchedData: [],
+  joke: {},
 };
 
 export const fetchAllJokes = createAsyncThunk(
@@ -76,6 +77,10 @@ export const jokesSlice = createSlice({
       state.fetchedCount = newCount;
       state.data.filteredData = fetchedData;
     },
+    getSingleJoke: (state, action) => {
+      const joke = state?.data?.results?.find((j) => j.id === action.payload);
+      state.joke = joke;
+    },
   },
   extraReducers: {
     [fetchAllJokes.loading]: (state, action) => {
@@ -114,6 +119,7 @@ export const jokesSlice = createSlice({
   },
 });
 
-export const { filterByCategory, fetchMoreData } = jokesSlice.actions;
+export const { filterByCategory, fetchMoreData, getSingleJoke } =
+  jokesSlice.actions;
 
 export default jokesSlice.reducer;

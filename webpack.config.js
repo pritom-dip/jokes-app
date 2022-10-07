@@ -4,42 +4,51 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/index.js")
+    bundle: path.resolve(__dirname, "./src/index.js"),
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name][contenthash].js",
     clean: true,
-    assetModuleFilename: "[name][ext]"
+    assetModuleFilename: "[name][ext]",
+  },
+  resolve: {
+    extensions: ["*", ".js", ".jsx", ".ts", ".tsx"],
   },
   devtool: "source-map",
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.js|\.jsx$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", ["@babel/preset-react", { runtime: "automatic" }]]
-          }
-        }
+            presets: [
+              "@babel/preset-env",
+              ["@babel/preset-react", { runtime: "automatic" }],
+            ],
+          },
+        },
       },
       {
         test: /\.(png|jpg|jpeg|svg|gif)$/i,
-        type: "asset/resource"
-      }
-    ]
+        type: "asset/resource",
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "React App using webpack",
       filename: "index.html",
-      template: "src/index.html"
-    })
-  ]
+      template: "src/index.html",
+    }),
+  ],
 };

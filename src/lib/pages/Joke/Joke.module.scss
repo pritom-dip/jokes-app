@@ -1,0 +1,10 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.mainSection {
+  background-color: $lightWhite;
+  padding-top: $sectionGap;
+  .wrapper {
+    @include containerWidth;
+  }
+}
