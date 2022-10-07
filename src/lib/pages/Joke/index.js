@@ -14,7 +14,8 @@ import Submit from "../../components/Submit";
 const Joke = () => {
   const { id } = useParams();
   const { joke, data } = useSelector((state) => state.jokes) || {};
-  const { data: relativeData } = useSelector((state) => state.jokes) || {};
+  const { data: relativeData, loading } =
+    useSelector((state) => state.jokes) || {};
   const dispatch = useDispatch();
   const { filteredData } = relativeData || {};
 
@@ -23,8 +24,6 @@ const Joke = () => {
       dispatch(getSingleJoke(id));
     }
   }, [id, data]);
-
-  console.log(joke);
 
   useEffect(() => {
     if (joke?.categories?.length > 0) {
@@ -36,16 +35,16 @@ const Joke = () => {
 
   return (
     <div className={styles.mainSection}>
-      {/* {loading ? (
+      {loading ? (
         <Loader />
-      ) : ( */}
-      <>
-        <div className={classNames(styles.wrapper)}>
-          <SingleJoke filteredData={filteredData || []} />
-        </div>
-        <Submit />
-      </>
-      {/* )} */}
+      ) : (
+        <>
+          <div className={classNames(styles.wrapper)}>
+            <SingleJoke filteredData={filteredData || []} />
+          </div>
+          <Submit />
+        </>
+      )}
     </div>
   );
 };

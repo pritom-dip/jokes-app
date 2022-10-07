@@ -1,6 +1,8 @@
 # Plans
 
-### 1. Create a react app with configuring webpack
+### 1. Make a react app with configuring webpack
+
+### Configure Webpack with react router router DOM
 
 ### 2. Enable react lazy loading for performance
 
@@ -15,3 +17,11 @@
 ### 7. Enable Filtering options for all Jokes
 
 ### 8. Make Search option Working
+
+### Make Responsive Home page
+
+### Make UI for single page
+
+### Make Reactions functinal
+
+### Make relative projects functional
