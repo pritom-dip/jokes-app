@@ -8,7 +8,8 @@ import { useSelector } from "react-redux";
 import Loader from "../../components/Loader";
 
 const Home = () => {
-  const { loading, error, data } = useSelector((state) => state.jokes) || {};
+  const { loading, error, data, total, fetchedCount } =
+    useSelector((state) => state.jokes) || {};
 
   return (
     <div className={styles.mainSection}>
@@ -18,7 +19,11 @@ const Home = () => {
         <>
           <div className={classNames(styles.wrapper)}>
             <Categories categories={data?.categories || []} />
-            <Cards results={data?.filteredData || []} />
+            <Cards
+              total={total}
+              fetchedCount={fetchedCount}
+              results={data?.filteredData || []}
+            />
           </div>
           <Submit />
         </>

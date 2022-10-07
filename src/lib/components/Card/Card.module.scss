@@ -46,6 +46,7 @@
       color: $mediumBlack;
       margin-top: 10px;
       margin-bottom: 30px;
+      word-wrap: break-word;
     }
     .statWrapper {
       @include flex;
