@@ -8,7 +8,7 @@ import { giveLike, giveDislike } from "../../features/reactions/reactionSlice";
 import { useParams } from "react-router-dom";
 import RelativeProjects from "../RelativeProjects";
 
-const SingleJoke = () => {
+const SingleJoke = ({ filteredData }) => {
   const { data } = useSelector((state) => state.reactions);
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -58,7 +58,7 @@ const SingleJoke = () => {
         <div className={classNames(styles.item, styles.secondItem)}>
           <div className={styles.content}>
             <div className={styles.border}>
-              <RelativeProjects />
+              <RelativeProjects filteredData={filteredData} />
             </div>
           </div>
         </div>
