@@ -13,11 +13,12 @@ const initialState = {
   },
   fetchedCount: 0,
   total: 0,
+  searchedData: [],
 };
 
 export const fetchAllJokes = createAsyncThunk(
   "jokes/fetchAllJokes",
-  async (value, { rejectWithValue }) => {
+  async (undefined, { rejectWithValue }) => {
     const getAllData = () =>
       axios.get(`https://api.chucknorris.io/jokes/search?query=all`);
 
@@ -41,6 +42,21 @@ export const fetchAllJokes = createAsyncThunk(
       categories: categories || [],
       total: data?.total,
     };
+  }
+);
+
+export const searchJokesByName = createAsyncThunk(
+  "jokes/searchJokesByName",
+  async (text, { rejectWithValue }) => {
+    const { data, status } = await axios.get(
+      `https://api.chucknorris.io/jokes/search?query=${text}`
+    );
+
+    if (status < 200 || status >= 300) {
+      return rejectWithValue(data);
+    }
+
+    return data.result;
   }
 );
 
@@ -68,6 +84,7 @@ export const jokesSlice = createSlice({
       state.data.categories = [];
       state.data.results = [];
       state.data.filteredData = [];
+      state.searchedData = [];
       state.fetchedCount = 0;
       state.total = 0;
     },
@@ -78,6 +95,7 @@ export const jokesSlice = createSlice({
       state.data.results = action.payload.jokes;
       state.data.filteredData = [...action.payload.jokes].slice(0, FETCH_DATA);
       state.fetchedCount = FETCH_DATA;
+      state.searchedData = [];
       state.total = action.payload.total;
     },
     [fetchAllJokes.rejected]: (state, action) => {
@@ -86,8 +104,12 @@ export const jokesSlice = createSlice({
       state.data.categories = [];
       state.data.results = [];
       state.data.filteredData = [];
+      state.searchedData = [];
       state.fetchedCount = 0;
       state.total = 0;
+    },
+    [searchJokesByName.fulfilled]: (state, action) => {
+      state.searchedData = action.payload;
     },
   },
 });

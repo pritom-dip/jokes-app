@@ -1,0 +1,24 @@
+@import "../../../styles/variables.scss";
+
+.wrapper {
+  position: relative;
+  .result {
+    position: absolute;
+    height: 400px;
+    overflow: hidden;
+    width: 100%;
+    background-color: $white;
+
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 20px;
+    .item {
+      border-bottom: 1px solid $borderColor;
+      padding: 15px 0;
+      a {
+        color: $mediumBlack;
+        text-decoration: none;
+      }
+    }
+  }
+}
