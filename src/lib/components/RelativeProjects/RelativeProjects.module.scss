@@ -1,0 +1,21 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.wrapper {
+  .heading {
+    text-transform: uppercase;
+    font-size: $headerFontSize;
+    font-weight: bold;
+    color: $mediumBlack;
+    margin-bottom: 10px;
+  }
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .content {
+      text-transform: capitalize;
+      color: $mediumBlack;
+    }
+  }
+}

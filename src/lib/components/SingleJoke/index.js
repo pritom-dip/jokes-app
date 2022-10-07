@@ -6,6 +6,7 @@ import HandDownIcon from "../../assets/images/handDown.png";
 import { useDispatch, useSelector } from "react-redux";
 import { giveLike, giveDislike } from "../../features/reactions/reactionSlice";
 import { useParams } from "react-router-dom";
+import RelativeProjects from "../RelativeProjects";
 
 const SingleJoke = () => {
   const { data } = useSelector((state) => state.reactions);
@@ -19,8 +20,6 @@ const SingleJoke = () => {
   const handleDislikeButtonClicked = (id) => {
     dispatch(giveDislike(id));
   };
-
-  console.log(data?.[id], data);
 
   return (
     <div className={styles.wrapper}>
@@ -59,14 +58,7 @@ const SingleJoke = () => {
         <div className={classNames(styles.item, styles.secondItem)}>
           <div className={styles.content}>
             <div className={styles.border}>
-              asset bundle.98b45e138c9235fd6561.hot-update.json 60 bytes
-              [emitted] [immutable] [hmr] Entrypoint bundle 2.08 MiB (2.89 MiB)
-              = bundle1c61a19fcf245ca2a151.js 2.08 MiB
-              bundle.98b45e138c9235fd6561.hot-update.js 962 bytes 6 auxiliary
-              assets cached modules 1.93 MiB (javascript) 924 KiB (asset)
-              [cached] 197 modules runtime modules 30.9 KiB 16 modules
-              ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/lib/components/SingleJoke/SingleJoke.module.scss
-              3.68 KiB [built] [code generated]
+              <RelativeProjects />
             </div>
           </div>
         </div>
