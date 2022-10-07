@@ -6,6 +6,7 @@ import Loader from "../../components/Loader";
 import SingleJoke from "../../components/SingleJoke";
 import {
   filterByCategory,
+  filterCategoryByEmpty,
   getSingleJoke,
 } from "../../features/jokes/jokesSlice";
 import styles from "./Joke.module.scss";
@@ -29,7 +30,7 @@ const Joke = () => {
     if (joke?.categories?.length > 0) {
       dispatch(filterByCategory(joke.categories[0]));
     } else {
-      dispatch(filterByCategory(""));
+      dispatch(filterCategoryByEmpty(""));
     }
   }, [joke]);
 

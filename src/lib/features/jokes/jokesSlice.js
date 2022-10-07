@@ -81,6 +81,12 @@ export const jokesSlice = createSlice({
       const joke = state?.data?.results?.find((j) => j.id === action.payload);
       state.joke = joke;
     },
+    filterCategoryByEmpty: (state) => {
+      const filteredJokes = state.data.results?.filter(
+        (joke) => joke?.categories?.length === 0
+      );
+      state.data.filteredData = filteredJokes;
+    },
   },
   extraReducers: {
     [fetchAllJokes.loading]: (state, action) => {
@@ -119,7 +125,11 @@ export const jokesSlice = createSlice({
   },
 });
 
-export const { filterByCategory, fetchMoreData, getSingleJoke } =
-  jokesSlice.actions;
+export const {
+  filterByCategory,
+  fetchMoreData,
+  getSingleJoke,
+  filterCategoryByEmpty,
+} = jokesSlice.actions;
 
 export default jokesSlice.reducer;

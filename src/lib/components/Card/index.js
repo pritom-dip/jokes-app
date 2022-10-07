@@ -4,7 +4,7 @@ import RightArrowIcon from "../../assets/images/rightArrow.png";
 import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
-  const { value, categories } = data || {};
+  const { value, categories, id } = data || {};
 
   return (
     <div className={classNames(styles.card)}>
@@ -25,7 +25,7 @@ const Card = ({ data }) => {
         </div>
 
         <Link
-          to="/"
+          to={`/${id}`}
           className={classNames(
             styles.statWrapper,
             styles.flexEnd,

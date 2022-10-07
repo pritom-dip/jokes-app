@@ -38,12 +38,12 @@ const Search = () => {
           {searchedData.length > 0 && searchedData.length > 4
             ? searchedData.slice(0, 3).map((data) => (
                 <div key={data.id} className={styles.item}>
-                  <Link to="/">{data.value}</Link>
+                  <Link to={`/${data.id}`}>{data.value}</Link>
                 </div>
               ))
             : searchedData.map((data) => (
                 <div key={data.id} className={styles.item}>
-                  <Link to="/">{data.value}</Link>
+                  <Link to={`/${data.id}`}>{data.value}</Link>
                 </div>
               ))}
         </div>
