@@ -8,8 +8,26 @@
   }
   .item {
     width: 70%;
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+    @media only screen and (max-width: 992px) {
+      width: 100%;
+    }
+    @media only screen and (max-width: 576px) {
+      width: 100%;
+    }
     &.secondItem {
       width: 30%;
+      @media only screen and (max-width: 767px) {
+        width: 100%;
+      }
+      @media only screen and (max-width: 992px) {
+        width: 100%;
+      }
+      @media only screen and (max-width: 576px) {
+        width: 100%;
+      }
     }
     .content {
       margin: 10px;
